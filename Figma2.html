@@ -1,12 +1,664 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>E-mentor</title>
+    <link rel="stylesheet" href="/assets/normalize.css">
+    <link rel="icon" href="/assets/images/icon.png" type="image/png">
+    <style>
+        .contain {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-template-rows: repeat(20, 1fr);
+            width: 1440px;
+            height: 1100px;
+        }
+
+        .contain-1 {
+            display: grid;
+            grid-column: 1 / 12;
+            grid-row: 1 / 11;
+            width: 1440px;
+            height: 800px;
+            background-color: #10B582;
+        }
+
+        .contain-2 {
+            display: grid;
+            grid-column: 1 / 12;
+            grid-row: 11 / 21;
+            width: 1440px;
+            height: 300px;
+            background-color: #E5E5E5;
+        }
+
+        .head-1 {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            width: 44px;
+            height: 16px;
+            color: #FDFDFD;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .head-2 {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+            width: 89px;
+            height: 16px;
+            color: #FDFDFD;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .head-3 {
+            grid-column: 5 / 6;
+            grid-row: 2 / 3;
+            width: 49px;
+            height: 16px;
+            color: #FDFDFD;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .head-4 {
+            grid-column: 6 / 7;
+            grid-row: 2 / 3;
+            width: 59px;
+            height: 16px;
+            color: #FDFDFD;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .head-5 {
+            grid-column: 7 / 8;
+            grid-row: 2 / 3;
+            width: 60px;
+            height: 16px;
+            color: #FDFDFD;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .head-6 {
+            grid-column: 8 / 9;
+            grid-row: 2 / 3;
+            width: 36px;
+            height: 16px;
+            color: #FDFDFD;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .head-7 {
+            grid-column: 9 / 10;
+            grid-row: 2 / 3;
+            width: 73px;
+            height: 16px;
+            color: #FDFDFD;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .main-1 {
+            grid-column: 2 / 3;
+            grid-row: 4 / 5;
+            width: 22px;
+            height: 22px;
+            color: #FDFDFD;
+        }
+
+        .main-2 {
+            grid-column: 2 / 3;
+            grid-row: 5 / 6;
+            width: 22px;
+            height: 22px;
+            color: #FDFDFD;
+        }
+
+        .main-3 {
+            grid-column: 2 / 3;
+            grid-row: 6 / 7;
+            width: 22px;
+            height: 22px;
+            color: #FDFDFD;
+        }
+
+        .main-4 {
+            grid-column: 2 / 3;
+            grid-row: 8 / 11;
+            width: 240px;
+            height: 300px;
+            border-radius: 0px 80px 0px 0px;
+        }
+
+        .main-5,
+        .main-51 {
+            grid-column: 5 / 8;
+            grid-row: 6 / 7;
+        }
+
+        .main-5 {
+            width: 130px;
+            height: 22px;
+            color: #FDFDFD;
+            column-fill: balance;
+
+        }
+
+        .main-51 {
+            width: 28px;
+            height: 22px;
+        }
+
+        .main-6 {
+            grid-column: 4 / 10;
+            grid-row: 7 / 9;
+            width: 542px;
+            height: 140px;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 58px;
+            line-height: 69.6px;
+            text-align: center;
+            color: #FDFDFD;
+            column-fill: balance;
+        }
+
+        .main-7 {
+            grid-column: 5 / 9;
+            grid-row: 9 / 10;
+            width: 378px;
+            height: 48px;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FDFDFD;
+            text-align: center;
+            column-fill: balance;
+        }
+
+        .main-8 {
+            grid-column: 5 / 8;
+            grid-row: 10 / 11;
+            background-color: #FA9F42;
+            border: none;
+            width: 230px;
+            height: 56px;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FDFDFD;
+            text-align: center;
+            border-radius: 0px 20px;
+            column-fill: balance;
+        }
+
+        .main-9 {
+            grid-column: 10 / 11;
+            grid-row: 5 / 10;
+            width: 240px;
+            height: 300px;
+            border-radius: 80px 0px 0px 0px;
+        }
+
+        .main-10 {
+            grid-column: 10 / 11;
+            grid-row: 9 / 11;
+            justify-self: end;
+            writing-mode: vertical-lr;
+            font-family: 'Raleway', Times, serif;
+            color: #FDFDFD;
+        }
+
+        .main-11 {
+            grid-column: 10 / 11;
+            grid-row: 10 / 11;
+            justify-self: end;
+            width: 8px;
+            height: 16px;
+        }
+
+        .foot-1,
+        .foot-1a {
+            grid-column: 2 / 3;
+            grid-row: 11 / 12;
+        }
+
+        .foot-1 {
+            width: 130px;
+            height: 22px;
+            color: #353A5A;
+            column-fill: center;
+        }
+
+        .foot-1a {
+            width: 28px;
+            height: 22px;
+        }
+
+        .foot-2 {
+            grid-column: 2 / 6;
+            grid-row: 12 / 14;
+            width: 270px;
+            height: 54px;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18.2px;
+            color: #353A5A;
+        }
+
+        .foot-3 {
+            grid-column: 2 / 3;
+            grid-row: 14 / 15;
+            width: 22px;
+            height: 22px;
+        }
+
+        .foot-4 {
+            grid-column: 3 / 4;
+            grid-row: 14 / 15;
+            width: 22px;
+            height: 22px;
+        }
+
+        .foot-5 {
+            grid-column: 4 / 5;
+            grid-row: 14 / 15;
+            width: 22px;
+            height: 22px;
+        }
+
+        .foot-6 {
+            grid-column: 6 / 7;
+            grid-row: 11 / 12;
+            width: 77px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .foot-7 {
+            grid-column: 6 / 7;
+            grid-row: 12 / 13;
+            width: 48px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .foot-8 {
+            grid-column: 6 / 7;
+            grid-row: 13 / 14;
+            width: 79px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .foot-9 {
+            grid-column: 6 / 7;
+            grid-row: 14 / 15;
+            width: 89px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .foot-10 {
+            grid-column: 6 / 7;
+            grid-row: 15 / 16;
+            width: 81px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .foot-11 {
+            grid-column: 7 / 8;
+            grid-row: 11 / 12;
+            width: 44px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .foot-12 {
+            grid-column: 7 / 8;
+            grid-row: 12 / 13;
+            width: 102px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+        }
+
+        .foot-13 {grid-column: 7 / 8;
+            grid-row: 13 / 14;
+            width: 121px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-14 {grid-column: 7 / 8;
+            grid-row: 14 / 15;
+            width: 59px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-15 {grid-column: 7 / 8;
+            grid-row: 15 / 16;
+            width: 58px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-16 {grid-column: 8 / 9;
+            grid-row: 11 / 12;
+            width: 73px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-17 {grid-column: 8 / 9;
+            grid-row: 12 / 13;
+            width: 132px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-18 {grid-column: 8 / 9;
+            grid-row: 13 / 14;
+            width: 107px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-19 {grid-column: 8 / 9;
+            grid-row: 14 / 15;
+            width: 82px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-20 {grid-column: 8 / 9;
+            grid-row: 15 / 16;
+            width: 89px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-21 {grid-column: 9 / 10;
+            grid-row: 11 / 12;
+            width: 153px;
+            height: 16px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 16px;}
+
+            .foot-22 {grid-column: 9 / 10;
+            grid-row: 12 / 14;
+            width: 182px;
+            height: 42px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20.8px;}
+
+            .foot-22a
+            {text-decoration: underline;}
+
+            .foot-23 {grid-column: 2 / 6;
+            grid-row: 18 / 19;
+            width: 258px;
+            height: 14px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;}
+
+            .foot-24 {grid-column: 8 / 9;
+            grid-row: 18 / 19;
+            width: 293px;
+            height: 14px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;}
+
+            .foot-25 {grid-column: 9 / 10;
+            grid-row: 18 / 19;
+            width: 126px;
+            height: 14px;
+            color: #353A5A;
+            text-decoration: none;
+            font-family: 'Raleway', Times, serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;}
+    </style>
 </head>
-<body>
-    
+
+<body class="contain">
+    <div class="contain-1">
+        <div class="head-1"><a href="#" class="head-1">О нас</a>
+        </div>
+        <div class="head-2"><a href="#" class="head-2">Платформа</a>
+        </div>
+        <div class="head-3"><a href="#" class="head-3">Курсы</a></div>
+        <div class="head-4"><a href="#" class="head-4">Лекции</a></div>
+        <div class="head-5"><a href="#" class="head-5">Тарифы</a></div>
+        <div class="head-6"><a href="#" class="head-6">Блог</a></div>
+        <div class="head-7"><a href="#" class="head-7">Контакты</a></div>
+        <div class="main-1">
+            <img src="/assets/images/f.png" alt="icon" class="main-1">
+        </div>
+        <div class="main-2">
+            <img src="/assets/images/vk.png" alt="icon" class="main-2">
+        </div>
+        <div class="main-3">
+            <img src="/assets/images/i.png" alt="icon" class="main-3">
+        </div>
+        <div class="main-4">
+            <img src="/assets/images/1.jpg" alt="photo" class="main-4">
+        </div>
+        <div class="main-5">
+            <img src="/assets/images/icon.png" alt="icon" class="main-51">
+            E-Mentor
+        </div>
+        <div class="main-6">
+            Образовательная онлайн-платформа
+        </div>
+        <div class="main-7">Курсы и видео-лекции по дизайну, копирайтингу, SMM, таргету и многим другим направлениям
+        </div>
+        <div class="main-8">
+            <button type="button" class="main-8">Все направления
+            </button>
+        </div>
+        <div class="main-9">
+            <img src="/assets/images/3.jpg" alt="photo" class="main-9">
+        </div>
+        <div class="main-10">Листай вниз</div>
+        <div class="main-11">
+            <img src="/assets/images/down.png" alt="down" class="main-11">
+        </div>
+    </div>
+    <div class="contain-2">
+        <div class="foot-1">
+            <img src="/assets/images/icon.png" alt="icon" class="foot-1a">
+            E-Mentor
+        </div>
+        <div class="foot-2">
+            Образовательная онлайн-платформа для развития и тренировки навыков в сфере информационных технологий
+        </div>
+        <div class="foot-3">
+            <img src="/assets/images/f.png" alt="icon" class="foot-3">
+        </div>
+        <div class="foot-4">
+            <img src="/assets/images/vk.png" alt="icon" class="foot-4">
+        </div>
+        <div class="foot-5">
+            <img src="/assets/images/i.png" alt="icon" class="foot-5">
+        </div>
+        <div class="foot-6">
+            <a href="/" class="foot-6">Обучение</a>
+        </div>
+        <div class="foot-7">
+            <a href="#" class="foot-7">Курсы</a>
+        </div>
+        <div class="foot-8">
+            <a href="#" class="foot-8">Вебинары</a>
+        </div>
+        <div class="foot-9">
+            <a href="#" class="foot-9">Тренажеры</a>
+        </div>
+        <div class="foot-10">
+            <a href="#" class="foot-10">Воркшопы</a>
+        </div>
+        <div class="foot-11">
+            <a href="#" class="foot-11">О нас</a>
+        </div>
+        <div class="foot-12">
+            <a href="#" class="foot-12">О платформе</a>
+        </div>
+        <div class="foot-13">
+            <a href="#" class="foot-13">Преподаватели</a>
+        </div>
+        <div class="foot-14">
+            <a href="#" class="foot-14">Тарифы</a>
+        </div>
+        <div class="foot-15">
+            <a href="#" class="foot-15">Отзывы</a>
+        </div>
+        <div class="foot-16">
+            <a href="#" class="foot-16">Контакты</a>
+        </div>
+        <div class="foot-17">
+            <a href="#" class="foot-17">Связаться с нами</a>
+        </div>
+        <div class="foot-18">
+            <a href="#" class="foot-18">Консультация</a>
+        </div>
+        <div class="foot-19">
+            <a href="#" class="foot-19">Реквизиты</a>
+        </div>
+        <div class="foot-20">
+            <a href="#" class="foot-20">Поддержка</a>
+        </div>
+        <div class="foot-21">
+            Возникли вопросы?
+        </div>
+        <div class="foot-22">
+            Напишите на на почту <span class="foot-22a">education@ementor.info</span>
+        </div>
+        <div class="foot-23">
+            E-Mentor &copy; 2021 Все права защищены
+        </div>
+        <div class="foot-24">
+            <a href="#" class="foot-24">Политика обработки персональных данных</a>
+        </div>
+        <div class="foot-25">
+            <a href="#" class="foot-25">Публичная оферта</a>
+        </div>
+    </div>
 </body>
+
 </html>
